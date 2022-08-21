@@ -7,19 +7,19 @@
 var productExceptSelf = function (nums) {
   let output = [];
   //if the array contains more than one zero, no reason to check all of it
-  let zero_count =false;
+  let saw_zero =false;
   //no reason to multiply all cells for each run, it's enough to get the product of all and divide by the each cell
   let total_product = 1;
   for (const cell of nums) {
     if(cell == 0)
         {
         //if I already saw a zero
-            if(zero_count)
+            if(saw_zero)
                 {
                     return ( new Array(nums.length).fill(0))
                 }
         // else, remember I saw a zero
-            zero_count =true;
+            saw_zero =true;
         }
      //if the cell is not a zero
       else{
@@ -29,7 +29,7 @@ var productExceptSelf = function (nums) {
   for (cell of nums) {
      if(cell == 0)
     output.push(total_product);
-    else if(zero_count)
+    else if(saw_zero)
         output.push(0);
      else
     output.push(total_product / cell);
