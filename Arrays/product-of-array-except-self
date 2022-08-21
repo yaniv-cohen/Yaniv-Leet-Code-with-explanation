@@ -1,0 +1,33 @@
+//https://leetcode.com/problems/product-of-array-except-self/submissions/
+
+/**
+ * @param {number[]} nums
+ * @return {number[]}
+ */
+var productExceptSelf = function (nums) {
+  let output = [];
+    let zero_count =false;
+  let total_product = 1;
+  for (const cell of nums) {
+    if(cell == 0 )
+        {
+            if(zero_count)
+                {
+                    return ( new Array(nums.length).fill(0))
+                }
+            zero_count =true;
+        }
+      else{
+      total_product *= cell;
+      }
+  }
+  for (cell of nums) {
+     if(cell == 0)
+    output.push(total_product);
+    else if(zero_count)
+        output.push(0);
+     else
+    output.push(total_product / cell);
+  }
+    return output
+};
