@@ -8,18 +8,18 @@ I found a list of Blind 75 Leetcode problems. Sharing it as I found it very usef
 
 Happy Coding!
 
-#Array
+# Array
 Two Sum
 Best Time to Buy and Sell Stock
 Contains Duplicate
-Product of Array Except Self
+Product of Array Except Self -Done
 Maximum Subarray
 Maximum Product Subarray
 Find Minimum in Rotated Sorted Array
 Search in Rotated Sorted Array
 3 Sum
 Container With Most Water
-#Binary
+# Binary
 Sum of Two Integers
 Number of 1 Bits
 Counting Bits
@@ -37,7 +37,7 @@ House Robber II
 Decode Ways
 Unique Paths
 Jump Game
-#Graph
+# Graph
 Clone Graph
 Course Schedule
 Pacific Atlantic Water Flow
@@ -46,7 +46,7 @@ Longest Consecutive Sequence
 Alien Dictionary (Leetcode Premium)
 Graph Valid Tree (Leetcode Premium)
 Number of Connected Components in an Undirected Graph (Leetcode Premium)
-#Interval
+# Interval
 Insert Interval
 Merge Intervals
 Non-overlapping Intervals
@@ -59,7 +59,7 @@ Merge Two Sorted Lists
 Merge K Sorted Lists
 Remove Nth Node From End Of List
 Reorder List
-#Matrix
+# Matrix
 Set Matrix Zeroes
 Spiral Matrix
 Rotate Image
@@ -75,7 +75,7 @@ Valid Palindrome
 Longest Palindromic Substring
 Palindromic Substrings
 Encode and Decode Strings (Leetcode Premium)
-#Tree
+# Tree
 Maximum Depth of Binary Tree
 Same Tree
 Invert/Flip Binary Tree
@@ -90,7 +90,7 @@ Lowest Common Ancestor of BST
 Implement Trie (Prefix Tree)
 Add and Search Word
 Word Search II
-#Heap
+# Heap
 Merge K Sorted Lists
 Top K Frequent Elements
 Find Median from Data Stream
