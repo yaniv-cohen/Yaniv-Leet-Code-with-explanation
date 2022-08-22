@@ -113,7 +113,7 @@ Reverse a Linked List
 
 
 
-Detect Cycle in a Linked List -Done
+Detect Cycle in a Linked List :white_check_mark:
 
 
 
