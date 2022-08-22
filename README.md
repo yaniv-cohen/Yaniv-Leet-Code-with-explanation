@@ -15,7 +15,7 @@ Best Time to Buy and Sell Stock
 
 Contains Duplicate
 
-Product of Array Except Self -Done
+Product of Array Except Self :white_check_mark:
 
 Maximum Subarray
 
