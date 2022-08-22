@@ -105,7 +105,7 @@ Meeting Rooms II (Leetcode Premium)
 
 
 
-#Linked List
+# Linked List
 
 
 
@@ -113,7 +113,7 @@ Reverse a Linked List
 
 
 
-Detect Cycle in a Linked List
+Detect Cycle in a Linked List -Done
 
 
 
