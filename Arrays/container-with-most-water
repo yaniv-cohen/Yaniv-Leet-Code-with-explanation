@@ -1,0 +1,32 @@
+/**
+ * @param {number[]} height
+ * @return {number}
+ */
+var maxArea = function (height) {
+  let maxAmount = 0;
+  let leftIndex = 0;
+  let rightIndex =  height.length-1;
+  while (leftIndex < rightIndex) {
+    let left = height[leftIndex];
+    let right = height[rightIndex];
+
+    let base = rightIndex - leftIndex;
+    let h = Math.min(left, right);
+
+    let currentAmount = h * base;
+
+    if (currentAmount > maxAmount) {
+      maxAmount = currentAmount;
+    }
+      //if left is smaller, no matter how tall the right will be, it will never add to the current amount, whichcan only go down.
+      //therefore we can skip the left value 
+    if (left < right) {
+      leftIndex++;
+    }
+      //same logic works for the right
+      else {
+      rightIndex--;
+    }
+  }
+  return maxAmount;
+};
