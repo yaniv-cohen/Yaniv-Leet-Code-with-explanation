@@ -1,0 +1,44 @@
+/**
+ * Definition for singly-linked list.
+ * function ListNode(val) {
+ *     this.val = val;
+ *     this.next = null;
+ * }
+ */
+
+/**
+ * @param {ListNode} head
+ * @return {boolean}
+ */
+var hasCycle = function(head) {
+    /*
+    if any of these is true, return true -
+    there is no starting node
+    the starting node has no val (bad input)
+    the starting node has no child node connected to it 
+    */
+    if(!head || head?.val === undefined  || !head.next )
+        {
+            return false;
+        }
+    head.visited=true;
+    return checkCurrentNode(head.next)
+
+    //checks if the given node was visited, marks the node as visited and 
+    //calls itself recursively until either end of list or reached a visited node
+    function checkCurrentNode(head)
+    {
+    //check if already saw it
+    if(head.visited)
+        {
+            return true;
+        }
+    //if reached the end of the list return false
+    if(!head.next)
+        {
+            return false;
+        }
+    head.visited = true;
+    return checkCurrentNode(head.next)
+    }
+};
