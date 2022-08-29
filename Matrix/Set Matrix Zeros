@@ -1,0 +1,34 @@
+//This is not the most effiecent solution, but it is my solution :)
+
+/**
+ * @param {number[][]} matrix
+ * @return {void} Do not return anything, modify matrix in-place instead.
+ */
+var setZeroes = function (matrix) {
+  console.log(matrix);
+  let colSet = new Set();
+  let rowCount = matrix.length;
+  let colCount = matrix[0].length;
+  everyRow: for (let yi = 0; yi < rowCount; yi++) {
+    let thisRowHasZero = false;
+    everyCol: for (let xi = 0; xi < colCount; xi++) {
+      if (matrix[yi][xi] === 0) {
+        thisRowHasZero = true;
+        colSet.add(xi);
+      }
+    }
+    if (thisRowHasZero) {
+      matrix[yi] = new Array(colCount).fill(0);
+    }
+  }
+
+  everyRow: for (let yi = 0; yi < rowCount; yi++) {
+      if(matrix[yi][0] === 0)
+          {
+              continue;
+          }
+    colSet.forEach((index) => {
+      matrix[yi][index] = 0;
+    });
+  }
+};
