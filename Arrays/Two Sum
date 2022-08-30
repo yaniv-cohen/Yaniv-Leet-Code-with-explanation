@@ -1,0 +1,13 @@
+// python
+
+class Solution:
+    def twoSum(self, nums: List[int], target: int) -> List[int]:
+        for iA, a in enumerate(nums):
+            for iB, b in  enumerate(nums):
+                if(iA==iB):
+                    continue
+                if(a+b ==target):
+                    return [iA,iB]
+                    
+                   
+//JS
