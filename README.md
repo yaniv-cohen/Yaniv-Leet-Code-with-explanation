@@ -360,3 +360,6 @@ Merge K Sorted Lists
 Top K Frequent Elements
 
 Find Median from Data Stream
+
+# EXTRAS
+1480. Running Sum of 1d Array :white_check_mark:
