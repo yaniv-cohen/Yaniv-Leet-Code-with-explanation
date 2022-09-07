@@ -25,3 +25,17 @@ var pivotIndex = function(nums) {
         }
     return -1
 };
+
+var pivotIndex2 = function (nums) {
+  let leftSum = 0;
+  let rightSum = nums.reduce((prev, curr) => prev + curr, 0) - nums[0];  
+  let len = nums.length;
+  for (let i = 0; i < len; i++) {
+    if (leftSum === rightSum) {
+      return i;
+    }
+    leftSum += nums[i];
+    rightSum -= nums[i+1];
+  }
+  return -1;
+};
