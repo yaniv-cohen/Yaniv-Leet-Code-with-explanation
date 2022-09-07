@@ -1,0 +1,27 @@
+/**
+ * @param {number[]} nums
+ * @return {number}
+ */
+var pivotIndex = function(nums) {
+    //create an array of sums
+    let previousSum =0
+    let sumsArr = nums.map((curr)=>{
+        let newSum = previousSum+curr
+        previousSum = newSum
+        return newSum
+    })
+    
+    //because every cell is the sum not including itself, move all cells to the right
+    sumsArr = [0, ...sumsArr]
+    const totalSum = sumsArr[nums.length]
+    
+    for(let i =0; i<nums.length; i++)
+        {
+            //for every cell, check if the sum of the cells to it's left is equal to the total sum, exluding itself
+            if(sumsArr[i] === totalSum-sumsArr[i+1])
+                {
+                    return i
+                }
+        }
+    return -1
+};
