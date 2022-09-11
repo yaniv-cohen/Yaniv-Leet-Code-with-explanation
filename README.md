@@ -73,7 +73,7 @@ Course Schedule
 
 Pacific Atlantic Water Flow
 
-Number of Islands
+Number of Islands :white_check_mark:
 
 Longest Consecutive Sequence
 
