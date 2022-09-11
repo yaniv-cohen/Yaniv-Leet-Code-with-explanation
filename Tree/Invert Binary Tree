@@ -30,3 +30,38 @@ var invertTree = function (root) {
   }
   return root;
 };
+
+
+second solution with less code, but slightly more iterations
+/**
+ * Definition for a binary tree node.
+ * function TreeNode(val, left, right) {
+ *     this.val = (val===undefined ? 0 : val)
+ *     this.left = (left===undefined ? null : left)
+ *     this.right = (right===undefined ? null : right)
+ * }
+ */
+/**
+ * @param {TreeNode} root
+ * @return {TreeNode}
+ */
+var invertTree = function (root) {
+  if (!root) {
+      return root
+  }
+    if (root.left && root.right) {
+      let temp = root.left;
+      root.left = root.right;
+      root.right = temp;
+
+    } else if (root.left) {
+      root.right = root.left;
+      root.left = null;
+    } else {
+      root.left = root.right;
+      root.right = null;
+    }
+  invertTree(root.left);
+  invertTree(root.right);
+  return root;
+};
