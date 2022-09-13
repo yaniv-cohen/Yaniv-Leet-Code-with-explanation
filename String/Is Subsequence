@@ -1,0 +1,25 @@
+/**
+ * @param {string} s
+ * @param {string} t
+ * @return {boolean}
+ */
+var isSubsequence = function(s, t) {
+    
+    let baseIndex =0 
+    //for each letter in the target string, loop until you found the next character
+    everyChar: for(let targetI=0; targetI < s.length; targetI++)
+        {
+            //loop from where i stopped for the previous target
+            for(let i = baseIndex; i<t.length; i++)
+                {
+                    if(t[i] ===  s[targetI])
+                        {
+                            baseIndex = i+1
+                            continue everyChar
+                        }
+                }
+            return false
+            
+        }
+    return true
+};
