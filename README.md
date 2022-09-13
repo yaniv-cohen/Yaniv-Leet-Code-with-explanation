@@ -11,7 +11,7 @@ Happy Coding!
 # Array
 Two Sum
 
-Best Time to Buy and Sell Stock
+Best Time to Buy and Sell Stock :white_check_mark:
 
 Contains Duplicate
 
