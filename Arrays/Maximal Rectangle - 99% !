@@ -1,0 +1,49 @@
+/**
+ * @param {character[][]} matrix
+ * @return {number}
+ */
+var maximalRectangle = function (matrix) {
+  function calcMaxAtPoint(originRow, originCol) {
+    let max = 0;
+    let maxCol = matrix[0].length;
+    rowLoop: for (let row = originRow; row < matrix.length; row++) {
+      colLoop: for (let col = originCol; col < maxCol; col++) {
+        let current = matrix[row][col];
+        if (current === "1") {
+          let currentArea = (row - originRow + 1) * (col - originCol + 1);
+          if (currentArea > max) {
+            max = currentArea;
+          }
+          continue;
+        } else {
+          maxCol = col;
+          break;
+        }
+      }
+    }
+    return max;
+  }
+  let maxArea = 0;
+  rowLoop: for (let row = 0; row < matrix.length; row++) {
+    let optimalAreaOfRow = (matrix.length - row) * matrix[0].length;
+    if (maxArea > optimalAreaOfRow) {
+      break rowLoop;
+    }
+    for (let col = 0; col < matrix[0].length; col++) {
+      let optimalArea = (matrix.length - row) * matrix[0].length;
+      if (matrix[row][col] === "1") {
+        let optimalAreaOfCol = (matrix.length - row) * (matrix[0].length - col);
+        // console.log(optimalAreaOfCol, maxArea ,'   ', row,col)
+        if (maxArea > optimalAreaOfCol) {
+          break;
+        }
+        let maxForCell = calcMaxAtPoint(row, col);
+        // console.log(`max for cell ${row},${col} is ${maxForCell}` )
+        if (maxForCell > maxArea) {
+          maxArea = maxForCell;
+        }
+      }
+    }
+  }
+  return maxArea;
+};
