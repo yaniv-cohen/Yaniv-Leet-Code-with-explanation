@@ -1,0 +1,23 @@
+/**
+ * @param {number[]} nums
+ * @return {string[]}
+ */
+var summaryRanges = function (nums) {
+    let output = []
+    if (nums.length === 1) return [nums[0] + '']
+    //loop for every cell in array
+    for (let i = 0; i < nums.length; i++) {
+        let start = nums[i] //remember the leftmost in current range
+        let count = 1 //count how many 1 incrementation are to the right of the this cell
+        while (nums[i + count] - count === start) {
+            count++
+        }
+        if (count > 1) {
+            output.push(start + '->' + (start + count - 1))
+            i += count - 1
+        }
+        else {
+            output.push('' + start)
+        }
+    }
+    return output
